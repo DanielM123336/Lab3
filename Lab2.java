@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class Lab2 {
@@ -10,6 +12,14 @@ public class Lab2 {
         frame.setLocationRelativeTo(null);
         GraphPanel panel = new GraphPanel();
         frame.add(panel);
+        JButton redrawButton = new JButton("Redraw");
+        frame.add(redrawButton, BorderLayout.SOUTH);
+        redrawButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                panel.repaint();
+            }
+
+        });
         frame.setVisible(true);
 
     }
